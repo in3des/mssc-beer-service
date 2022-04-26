@@ -19,16 +19,16 @@ import java.util.UUID;
 @Builder
 public class BeerDto {
 
-    @Null   //readonly
+    @Null       //readonly
     private UUID id;
 
-    @Null   //readonly
+    @Null       //readonly
     private Integer version;
 
-    @Null   //readonly
+    @Null       //readonly
     private OffsetDateTime createdDate;
 
-    @Null   //readonly
+    @Null       //readonly
     private OffsetDateTime lastModifiedDate;
 
     @NotBlank
