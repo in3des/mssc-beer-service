@@ -1,46 +1,30 @@
 package guru.springframework.msscbeerservice.domain;
 
-import guru.springframework.msscbeerservice.web.model.BeerStyleEnum;
-import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.UpdateTimestamp;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
+import java.sql.Timestamp;
 import java.util.UUID;
 
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity
+@Data
 public class Beer {
 
-    @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
     private UUID id;
 
-    @Version
     private Integer version;
 
-    @CreationTimestamp
-    @Column(updatable = false)
-    private OffsetDateTime createDate;
-//    private Timestamp createDate;
-
-    @UpdateTimestamp
-    private OffsetDateTime lastModifiedDate;
-//    private Timestamp lastModifiedDate;
+    private Timestamp createdDate;
+    private Timestamp lastModifiedDate;
 
     private String beerName;
-    private BeerStyleEnum beerStyle;
+    private String beerStyle;
 
-    @Column(unique = true)
     private Long upc;
 
     private BigDecimal price;

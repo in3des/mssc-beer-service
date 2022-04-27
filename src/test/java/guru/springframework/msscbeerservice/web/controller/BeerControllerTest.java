@@ -3,7 +3,6 @@ package guru.springframework.msscbeerservice.web.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import guru.springframework.msscbeerservice.services.BeerService;
 import guru.springframework.msscbeerservice.web.model.BeerDto;
-import guru.springframework.msscbeerservice.web.model.BeerStyleEnum;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -57,7 +56,7 @@ public class BeerControllerTest {
                 .createdDate(OffsetDateTime.now())
                 .lastModifiedDate(OffsetDateTime.now())
                 .beerName("Beer1")
-                .beerStyle(BeerStyleEnum.GOSE)
+                .beerStyle("PALE_ALE")
                 .upc(1234567890L)
                 .price(new BigDecimal("11.95"))
                 .quantityOnHand(15)
@@ -89,13 +88,7 @@ public class BeerControllerTest {
         //given
         BeerDto beerDto = validBeer;
         beerDto.setId(null);
-        BeerDto savedDto = BeerDto.builder().id(UUID.randomUUID())
-                .beerName("New Beer")
-//                .beerStyle(BeerStyleEnum.STOUT)
-//                .upc(12300007L)
-//                .price(BigDecimal.valueOf(15.99))
-                .build();
-//        BeerDto savedDto = validBeer;
+        BeerDto savedDto = BeerDto.builder().id(UUID.randomUUID()).beerName("New Beer").build();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
         given(beerService.saveNewBeer(any())).willReturn(savedDto);
