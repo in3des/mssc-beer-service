@@ -5,8 +5,6 @@ import guru.springframework.msscbeerservice.web.model.BeerStyleEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Slf4j
@@ -18,14 +16,14 @@ public class BeerServiceImpl implements BeerService {
 //        return BeerDto.builder().build();
         return BeerDto.builder()
                 .id(UUID.randomUUID())
+//                .version(1)
+//                .createdDate(OffsetDateTime.now())
+//                .lastModifiedDate(OffsetDateTime.now())
                 .beerName("Galaxy Cat")
                 .beerStyle(BeerStyleEnum.GOSE)
-                .quantityOnHand(15)
-                .upc(337010000002L)
-                .price(new BigDecimal("11.95"))
-                .version(1)
-                .createdDate(OffsetDateTime.now())
-                .lastModifiedDate(OffsetDateTime.now())
+//                .upc(337010000002L)
+//                .price(new BigDecimal("11.95"))
+//                .quantityOnHand(15)
                 .build();
     }
 
