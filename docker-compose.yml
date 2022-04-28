@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  micro_backend:
+    build: .
+    container_name: mssc-beer-service-in3des
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://db_postgres_micro/testdb_kh
+    ports:
+      - "8080:8080"
+#    restart: always
+
+

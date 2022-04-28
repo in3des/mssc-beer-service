@@ -1,5 +1,5 @@
 Status of last pipeline: <br>
-<img src="https://github.com/Dmitriy-Muchanovskiy/test_git_actions/workflows/Java-CI-with-Maven/badge.svg?branch-master"><br>
+<img src="https://github.com/in3des/mssc-beer-service-in3des/workflows/Java-CI-with-Maven/badge.svg?branch-master"><br>
 
 # MSSC Beer Service
 
