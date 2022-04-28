@@ -45,6 +45,6 @@ public class BeerServiceImpl implements BeerService {
     @Override
     public void deleteBeerById(UUID beerId) {
         // todo impl - would delete a real beer
-        log.debug("Deleting a beer...");
+        log.debug("Deleting a beer... by ID");
     }
 }
