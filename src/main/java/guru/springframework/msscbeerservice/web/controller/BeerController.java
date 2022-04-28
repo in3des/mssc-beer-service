@@ -4,8 +4,6 @@ import guru.springframework.msscbeerservice.services.BeerService;
 import guru.springframework.msscbeerservice.web.model.BeerDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import lombok.val;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -31,15 +29,15 @@ public class BeerController {
     @PostMapping
     public ResponseEntity saveNewBeer(@Validated @RequestBody BeerDto beerDto) {
 
-        log.debug("in handle post...");
+//        log.debug("in handle post...");
+//
+//        val savedBeer = beerService.saveNewBeer(beerDto);
+//
+//        val headers = new HttpHeaders();
+//        // todo add hostname to url
+//        headers.add("Location", "/api/v1/beer/" + savedBeer.getId().toString());
 
-        val savedBeer = beerService.saveNewBeer(beerDto);
-
-        val headers = new HttpHeaders();
-        // todo add hostname to url
-        headers.add("Location", "/api/v1/beer/" + savedBeer.getId().toString());
-
-        return new ResponseEntity(headers, HttpStatus.CREATED);
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 
     public ResponseEntity updateBeerById(@PathVariable("beerId") UUID beerId, @Validated @RequestBody BeerDto beerDto) {
